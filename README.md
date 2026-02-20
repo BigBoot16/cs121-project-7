@@ -128,3 +128,50 @@ void printDate() {
   print: array[month] day, year
 }
 ```
+
+## Student class
+
+```
+Student() {
+    set firstName, lastName, and creditHours to default values
+}
+
+void init(studentString) {
+    create stringstream converter
+    create temp strings:
+        street
+        city
+        state
+        zip
+        sBirth
+        sGrad
+        sCredits
+    
+    set converter to studentString
+    getline from converter, set to each var and temp var, split by ','
+
+    //initialize address, birth date, and graduation date
+    address.init(street, city, state, zip)
+    birthDate.init(sBirth)
+    gradDate.init(sGrad)
+
+    clear converter
+    input from sCredits to converter
+    output int from converter to creditHours
+}
+
+void printStudent() {
+    print: firstName + " " + lastName
+    address.printAddress
+    print: "DOB: " then birthDate.printDate()
+    print: "Grad: " then gradDate.printDate()
+    print: "Credits: " + creditHours
+}
+
+string getLastFirst() {
+    create lastFirst string containing:
+    "____________________________________\n \n"
+    lastName + ", " + firstName
+    return lastFirst
+}
+```
